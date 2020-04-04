@@ -9,7 +9,11 @@ public class BankAccountApp {
 		
 		chkacc1.showInfo();
 		System.out.println("****************");
-		saveacc1.showInfo();		
+		saveacc1.showInfo();
+		
+		saveacc1.deposit(3000);
+		saveacc1.withdraw(1000);
+		saveacc1.transfer("Kielce", 2300);
 		
 		// Read a CSV File then create new accounts based on that data
 		
