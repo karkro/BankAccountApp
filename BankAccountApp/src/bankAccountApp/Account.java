@@ -22,7 +22,6 @@ public abstract class Account implements IBaseRate{
 		this.accountNumber = setAccountNumber();
 		
 		setRate();
-		
 	}
 	
 	public abstract void setRate();
@@ -32,6 +31,14 @@ public abstract class Account implements IBaseRate{
 		int uniqueID = index;
 		int randomNumber = (int) (Math.random() * Math.pow(10, 3));
 		return lastTwoOfSSN + uniqueID + randomNumber;
+	}
+	
+	public void compound() {
+		// Narosłe odsetki
+		double accruedInterest = balance * (rate/100);
+		balance += accruedInterest;
+		System.out.println("Accrued Interest: $" + accruedInterest);
+		printBalance();
 	}
 		
 	// List common methods - transactions
@@ -63,7 +70,6 @@ public abstract class Account implements IBaseRate{
 				"\nBalance: " + balance +
 				"\nRate: " + rate + "%");
 	}
-	
 	
 }
 	
